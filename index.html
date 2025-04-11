@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sketch</title>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <script src="libraries/p5.min.js"></script>
+    <script src="libraries/p5.sound.min.js"></script>
+  </head>
+
+  <body>
+    <!-- 右上角選單 -->
+    <ul class="menu" id="menu">
+      <li><a href="#home" onclick="hideIframe()">首頁</a></li>
+      <li><a href="#about">自我介紹</a></li>
+      <li class="dropdown">
+        <a href="#portfolio">作品集</a>
+        <ul class="submenu">
+          <li><a href="#" onclick="loadIframe('https://coolors.co/palettes/trending')">第一周</a></li>
+          <li><a href="#" onclick="loadIframe('https://openprocessing.org/')">第二周</a></li>
+          <li><a href="#" onclick="loadIframe('https://hackmd.io/@cfchen/S1xdlbl0Jl')">第三周</a></li>
+          <li><a href="#" onclick="loadIframe('https://hanyu530.github.io/20250328/')">第四周</a></li>
+        </ul>
+      </li>
+      <li><a href="#quiz">測驗卷</a></li>
+      <li><a href="#tutorials">教學影片</a></li>
+    </ul>
+
+    <!-- iframe 顯示區域 -->
+    <iframe id="content-frame" src="" frameborder="0" style="display: none;"></iframe>
+
+    <script src="sketch.js"></script>
+    <script>
+      function loadIframe(url) {
+        const iframe = document.getElementById('content-frame');
+        iframe.style.display = 'block'; // 顯示 iframe
+        iframe.src = url;
+      }
+
+      function hideIframe() {
+        const iframe = document.getElementById('content-frame');
+        iframe.style.display = 'none'; // 隱藏 iframe
+        iframe.src = ''; // 清空 iframe 的內容
+      }
+
+      // 顯示或隱藏選單（滑入滑出效果）
+      document.addEventListener('mousemove', (event) => {
+        const menu = document.getElementById('menu');
+        if (event.clientY < 250) {
+          menu.style.top = '0px'; // 滑入
+        } else {
+          menu.style.top = '-100px'; // 滋出（隱藏）
+        }
+      });
+    </script>
+  </body>
+</html>

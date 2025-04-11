@@ -1,0 +1,46 @@
+利用ul和li產生一個選單,選單的位置在右上角,選單顯示在左右同一行上面,選單的項目有五個,分別為首頁,自我介紹,作品及,測驗卷,教學影片
+// 選單的顏色為藍色,背景顏色為淺灰色,選單的項目文字顏色為白色,選單的項目文字大小為20px,選單的項目文字間距為10px
+// 當滑鼠移到選單的項目上時,選單的項目文字顏色變為紅色
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <style>
+        body {
+            background-color: lightgray;
+        }
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-color: blue;
+        }
+        li {
+            display: inline;
+            margin-right: 10px;
+        }
+        a {
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+        }
+        a:hover {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li><a href="#">首頁</a></li>
+        <li><a href="#">自我介紹</a></li>
+        <li><a href="#">作品集</a></li>
+        <li><a href="#">測驗卷</a></li>
+        <li><a href="#">教學影片</a></li>
+    </ul>
+</body>
+</html>
